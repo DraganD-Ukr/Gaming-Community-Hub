@@ -8,6 +8,7 @@ export default function Example() {
 
   return (
     <div className="bg-gray-900"> {/* Page color */}
+
       {/* Navbar */}
       <Navbar />
 
@@ -34,13 +35,16 @@ export default function Example() {
               </a>
             </div>
           </div>
+
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-              Data to enrich your online business
-            </h1>
+            <div className=" mx-48">
+              <h1 className="w-5 text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                Connect Play Dominate
+              </h1>
+            </div>
+
             <p className="mt-6 text-lg leading-8 text-gray-300">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat fugiat aliqua.
+              Welcome to Gaming Community Hub – the go-to hub for gamers! Connect, play, and dominate alongside like-minded individuals.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
@@ -56,7 +60,7 @@ export default function Example() {
           </div>
         </div>
 
-        
+
       </div>
     </div>
   )
