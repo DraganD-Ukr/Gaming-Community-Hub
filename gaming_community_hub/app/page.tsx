@@ -4,13 +4,9 @@ import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 
 export default function Example() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="bg-gray-900"> {/* Page color */}
-
-      {/* Navbar */}
-      <Navbar />
 
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
