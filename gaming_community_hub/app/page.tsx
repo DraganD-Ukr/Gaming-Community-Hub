@@ -24,7 +24,7 @@ export default function Example() {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-300 ring-1 ring-gray-200/30 hover:ring-gray-500/20 duration-300 ease-in-out">
-              Announcing our next round of funding.{' '}
+              Text to be edited...{' '}
               <a href="#" className="font-semibold text-indigo-600">
                 <span className="absolute inset-0" aria-hidden="true" />
                 Read more <span aria-hidden="true">&rarr;</span>
@@ -44,12 +44,12 @@ export default function Example() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="/auth/login"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 duration-150"
               >
                 Get started
               </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 rounded-full px-4 py-2 transition-colors duration-300 ease-in-out ">
+              <a href="/about" className="text-sm font-semibold leading-6 text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 rounded-full px-4 py-2 transition-colors duration-300 ease-in-out ">
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
