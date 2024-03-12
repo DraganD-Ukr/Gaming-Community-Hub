@@ -19,6 +19,10 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // const router = useRouter();
 
+  const closeMobileMenu: React.MouseEventHandler<HTMLAnchorElement> = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
 
     <header className="absolute inset-x-0 top-0 z-50 dark:bg-gray-900">
@@ -53,10 +57,13 @@ export default function Navbar() {
         {/* Nav links */}
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <Link key={item.name} href={item.href}>
-              <div className="-mx-3 block rounded-full px-4 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out">
+            <Link legacyBehavior key={item.name} href={item.href}>
+              <a
+              onClick={closeMobileMenu}
+              className="-mx-3 block rounded-full px-4 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out"
+            >
                 {item.name}
-              </div>
+              </a>
             </Link>
           ))}
 
@@ -78,7 +85,7 @@ export default function Navbar() {
         {/* Mobile menu properties */}
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto dark:bg-slate-800 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1">
+            <a href="/" className="-m-1.5 p-1">
               <span className="sr-only">Your Company</span>
               <img
                 className="h-14 w-auto"
@@ -104,10 +111,12 @@ export default function Navbar() {
               {/* Nav links */}
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <Link key={item.name} href={item.href}>
-                    <div className="-mx-3 block rounded-full px-4 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out">
+                  <Link legacyBehavior key={item.name} href={item.href}>
+                    <a 
+                    onClick={closeMobileMenu}
+                    className="-mx-3 block rounded-full px-4 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out">
                       {item.name}
-                    </div>
+                    </a>
                   </Link>
                 ))}
 
@@ -115,7 +124,7 @@ export default function Navbar() {
               </div>
 
               <div className="py-6">
-                <Link href="#">
+                <Link legacyBehavior href="#">
                   <a className="-mx-3 block rounded-full px-4 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out">
                     Log in
                   </a>
