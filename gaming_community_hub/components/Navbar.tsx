@@ -5,7 +5,8 @@ import { useState, useEffect } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-// import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
+
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -15,10 +16,18 @@ const navigation = [
   { name: 'About', href: '/about' },
 ];
 
-export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // const router = useRouter();
 
+
+
+export default function Navbar() {
+  // Mobile menu state
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Active Links
+  const isActive = (href: string) => href === currentPath;
+  const currentPath = usePathname();
+
+  // Close mobile menu
   const closeMobileMenu: React.MouseEventHandler<HTMLAnchorElement> = () => {
     setMobileMenuOpen(false);
   };
@@ -59,15 +68,13 @@ export default function Navbar() {
           {navigation.map((item) => (
             <Link legacyBehavior key={item.name} href={item.href}>
               <a
-              onClick={closeMobileMenu}
-              className="-mx-3 block rounded-full px-4 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out"
-            >
+                onClick={closeMobileMenu}
+                className={`-mx-3 block rounded-full px-4 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out ${isActive(item.href) ? ' decoration-blue-400 decoration-2 underline underline-offset-8' : ''}`}
+              >
                 {item.name}
               </a>
             </Link>
           ))}
-
-
         </div>
 
         {/* Login button */}
@@ -112,9 +119,10 @@ export default function Navbar() {
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
                   <Link legacyBehavior key={item.name} href={item.href}>
-                    <a 
-                    onClick={closeMobileMenu}
-                    className="-mx-3 block rounded-full px-4 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out">
+                    <a
+                      onClick={closeMobileMenu}
+                      className={`-mx-3 block rounded-full px-4 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out ${isActive(item.href) ? ' decoration-blue-400 decoration-2 underline underline-offset-8' : ''}`}
+                      >
                       {item.name}
                     </a>
                   </Link>
