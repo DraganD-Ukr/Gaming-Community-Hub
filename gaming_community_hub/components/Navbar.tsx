@@ -1,17 +1,18 @@
 'use client';
 
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-// import Link from 'next/link';
+import Link from 'next/link';
 // import { useRouter } from 'next/router';
 
 const navigation = [
-  { name: 'Games', href: '#' },
-  { name: 'Events', href: '#' },
-  { name: 'Tech and Gear', href: '#' },
-  { name: 'About', href: '#' },
+  { name: 'Home', href: '/' },
+  { name: 'Games', href: '/games' },
+  { name: 'Events', href: '/events' },
+  { name: 'Tech and Gear', href: '/tech-and-gear' },
+  { name: 'About', href: '/about' },
 ];
 
 export default function Navbar() {
@@ -24,15 +25,17 @@ export default function Navbar() {
       <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         {/* Logo */}
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-0">
-            <span className="sr-only">Gaming Community Hub</span>
-            <img
-              className="h-12 w-auto"
-              src="/logo.png"
-              alt="Logo"
-              // <a href="https://www.freepnglogos.com/images/dice-30474.html">Get it on gaming dice icon windows iconset icons</a>
-            />
-          </a>
+          {/* Use the Link component for the logo */}
+          <Link href="/">
+            <div className="-m-1.5 p-0">
+              <span className="sr-only">Gaming Community Hub</span>
+              <img
+                className="h-12 w-auto"
+                src="/logo.png"
+                alt="Logo"
+              />
+            </div>
+          </Link>
         </div>
 
         {/* Mobile menu opened */}
@@ -50,14 +53,14 @@ export default function Navbar() {
         {/* Nav links */}
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 rounded-full px-4 py-2 transition-colors duration-300 ease-in-out"
-            >
-              {item.name}
-            </a>
+            <Link key={item.name} href={item.href}>
+              <div className="-mx-3 block rounded-full px-4 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out">
+                {item.name}
+              </div>
+            </Link>
           ))}
+
+
         </div>
 
         {/* Login button */}
@@ -71,7 +74,7 @@ export default function Navbar() {
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
 
         <div className="fixed inset-0 z-50" />
-        
+
         {/* Mobile menu properties */}
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto dark:bg-slate-800 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
@@ -101,23 +104,22 @@ export default function Navbar() {
               {/* Nav links */}
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="-mx-3 block rounded-full px-4 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out"
-                  >
-                    {item.name}
-                  </a>
+                  <Link key={item.name} href={item.href}>
+                    <div className="-mx-3 block rounded-full px-4 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out">
+                      {item.name}
+                    </div>
+                  </Link>
                 ))}
+
+
               </div>
 
               <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-full px-4 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out"
-                >
-                  Log in
-                </a>
+                <Link href="#">
+                  <a className="-mx-3 block rounded-full px-4 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out">
+                    Log in
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
