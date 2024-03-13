@@ -29,7 +29,7 @@ export default function About() {
               </div>
 
               <div className="mb-4">
-                Are you passionate about gaming? Look no further! Our platform is designed to bring gamers together from all corners of the globe. Whether you're a casual player or a hardcore enthusiast, there's something here for everyone.
+                Are you passionate about gaming? Look no further! Our platform is designed to bring gamers together from all corners of the globe. Whether you&apos;re a casual player or a hardcore enthusiast, there&apos;s something here for everyone.
               </div>
 
               <div className="mb-12">
@@ -39,7 +39,7 @@ export default function About() {
               <ul className="mb-8 list-outside list-disc text-start px-8 py-4 bg-gray-700 bg-opacity-30 rounded-lg">
                 <li className="mb-4"><div className="text-white text-lg font-bold mb-2">User Registration and Login:</div> Create your personalized account to access all the features of our community hub. Log in to engage with fellow gamers and unlock exclusive content.</li>
 
-                <li className="mb-4"><div className="text-white text-lg font-bold mb-2">Post Sharing:</div>Share your gaming triumphs, tips, and tricks with the community. Whether it's a detailed guide, a memorable gaming moment, or an insightful review, your posts are welcomed and celebrated.</li>
+                <li className="mb-4"><div className="text-white text-lg font-bold mb-2">Post Sharing:</div>Share your gaming triumphs, tips, and tricks with the community. Whether it&apos;s a detailed guide, a memorable gaming moment, or an insightful review, your posts are welcomed and celebrated.</li>
 
                 <li className="mb-4"><div className="text-white text-lg font-bold mb-2">Game Ratings:</div>Explore our extensive database of games and contribute by rating your experiences. Help fellow gamers discover new favorites or avoid potential disappointments.</li>
 
@@ -54,7 +54,7 @@ export default function About() {
               </ul>
 
               <div className="mb-4">
-                At our Gaming Community Hub, the adventure never ends. Whether you're looking for gaming companions, seeking advice, or simply want to immerse yourself in all things gaming-related, you'll find a welcoming home here.
+                At our Gaming Community Hub, the adventure never ends. Whether you&apos;re looking for gaming companions, seeking advice, or simply want to immerse yourself in all things gaming-related, you&apos;ll find a welcoming home here.
               </div>
 
               <div className="mb-4">

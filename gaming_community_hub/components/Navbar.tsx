@@ -6,6 +6,7 @@ import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 
 const navigation = [
@@ -42,10 +43,12 @@ export default function Navbar() {
           <Link href="/">
             <div className="-m-1.5 p-0">
               <span className="sr-only">Gaming Community Hub</span>
-              <img
+              <Image
                 className="h-12 w-auto"
                 src="/logo.png"
                 alt="Logo"
+                width={48}
+                height={48}
               />
             </div>
           </Link>
@@ -94,10 +97,12 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <a href="/" className="-m-1.5 p-1">
               <span className="sr-only">Your Company</span>
-              <img
-                className="h-14 w-auto"
+              <Image
+                className="h-12 w-auto"
                 src="/logo.png"
                 alt="Logo"
+                width={48}
+                height={48}
               />
             </a>
 
@@ -122,7 +127,7 @@ export default function Navbar() {
                     <a
                       onClick={closeMobileMenu}
                       className={`-mx-3 block rounded-full px-4 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out ${isActive(item.href) ? ' decoration-blue-400 decoration-2 underline underline-offset-8' : ''}`}
-                      >
+                    >
                       {item.name}
                     </a>
                   </Link>
