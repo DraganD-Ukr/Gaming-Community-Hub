@@ -17,6 +17,8 @@ const navigation = [
   { name: 'About', href: '/about' },
 ];
 
+const loginPath = "/login";
+
 
 
 
@@ -82,9 +84,11 @@ export default function Navbar() {
 
         {/* Login button */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 rounded-full px-4 py-2 transition-colors duration-300 ease-in-out">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          <Link legacyBehavior href={loginPath} >
+            <a className="text-sm font-semibold leading-6 text-gray-900 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 rounded-full px-4 py-2 transition-colors duration-300 ease-in-out">
+              Log in <span aria-hidden="true">&rarr;</span>
+            </a>
+          </Link>
         </div>
       </nav>
 
