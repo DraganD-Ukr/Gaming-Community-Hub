@@ -41,7 +41,6 @@ export default function Navbar() {
       <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         {/* Logo */}
         <div className="flex lg:flex-1">
-          {/* Use the Link component for the logo */}
           <Link href="/">
             <div className="-m-1.5 p-0">
               <span className="sr-only">Gaming Community Hub</span>

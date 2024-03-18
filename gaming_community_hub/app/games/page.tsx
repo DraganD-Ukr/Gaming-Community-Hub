@@ -24,7 +24,7 @@ export default function Games() {
 
 
 
-  const rating = 4.6; // replace with your rating
+  const rating = 4.6; // Rating of the game (static variable for the example)
   const fullStars = Math.floor(rating);
   const partialStar = rating % 1;
   const emptyStars = 5 - Math.ceil(rating);
@@ -73,18 +73,18 @@ export default function Games() {
 
                       <div className="flex justify-center items-center mb-2">
                         {Array.from({ length: fullStars }).map((_, i) => (
-                          <FaStar color="#ffc107" size={14} />
+                          <FaStar key={i} color="#ffc107" size={14} />
                         ))}
                         {partialStar > 0 && (
                           <div style={{ position: 'relative', width: '14px' }}>
-                            <FaRegStar color="#e4e5e9" size={14} />
+                            <FaRegStar key="partial" color="#e4e5e9" size={14} />
                             <div style={{ position: 'absolute', overflow: 'hidden', width: `${14 * partialStar}px`, left: 0, top: 0 }}>
-                              <FaStar color="#ffc107" size={14} />
+                              <FaStar key="partial-filled" color="#ffc107" size={14} />
                             </div>
                           </div>
                         )}
                         {Array.from({ length: emptyStars }).map((_, i) => (
-                          <FaRegStar color="#e4e5e9" size={14} />
+                          <FaRegStar key={`empty-${i}`} color="#e4e5e9" size={14} />
                         ))}
                         <span className="ml-2 text-md text-gray-600 dark:text-gray-300">{rating.toFixed(1)}</span>
                       </div>
