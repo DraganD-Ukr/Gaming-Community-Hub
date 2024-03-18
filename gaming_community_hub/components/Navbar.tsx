@@ -38,7 +38,7 @@ export default function Navbar() {
   return (
 
     <header className="absolute inset-x-0 top-0 z-50 dark:bg-gray-900">
-      <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav className="flex items-center justify-between p-6 lg:px-8 lg:py-4" aria-label="Global">
         {/* Logo */}
         <div className="flex lg:flex-1">
           <Link href="/">
@@ -73,7 +73,7 @@ export default function Navbar() {
             <Link legacyBehavior key={item.name} href={item.href}>
               <a
                 onClick={closeMobileMenu}
-                className={`-mx-3 block rounded-full px-4 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out ${isActive(item.href) ? ' decoration-blue-400 decoration-2 underline underline-offset-8' : ''}`}
+                className={`-mx-3 block rounded-full px-4 py-2 text-sm font-semibold leading-4 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out ${isActive(item.href) ? ' decoration-blue-400 decoration-2 underline underline-offset-8' : ''}`}
               >
                 {item.name}
               </a>

@@ -51,7 +51,7 @@ export default function Games() {
           <div className="text-center">
 
             <div className="mx-auto">
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-14">
+              <h1 className=" text-4xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl mb-14">
                 <span style={{ whiteSpace: 'nowrap' }}>Featured Games</span>
               </h1>
             </div>

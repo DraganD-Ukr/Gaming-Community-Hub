@@ -15,16 +15,16 @@ export default function About() {
             }}
           />
         </div>
-        <div className="mx-auto max-w-4xl md:max-4x1 py-32 sm:py-48 lg:py-56">
+        <div className="mx-auto max-w-4xl md:max-4x1 py-32 sm:py-40 lg:py-28">
           <div className="text-center">
             <div className="mx-ato">
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl decoration-1 underline underline-offset-19">
                 <span style={{ whiteSpace: 'nowrap' }}>Gaming Community Hub</span>
               </h1>
             </div>
 
-            <div className="mt-6 text-lg leading-8 text-pretty text-gray-300">
-              <div className="mt-4 mb-4 text-2xl">
+            <div className="mt-6 text-base leading-8 text-pretty text-gray-100">
+              <div className="m-6 text-2xl">
                 Welcome to our Gaming Community Hub!
               </div>
 
