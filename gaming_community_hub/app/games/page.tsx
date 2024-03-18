@@ -93,7 +93,7 @@ export default function Games() {
 
                     <div className="flex justify-center items-center my-3">
                       <Image
-                        src="/valheim.jpg"
+                        src="https://cdn.akamai.steamstatic.com/steam/apps/892970/capsule_616x353.jpg?t=1708348390"
                         alt="Valheim"
                         width={200}
                         height={200}
