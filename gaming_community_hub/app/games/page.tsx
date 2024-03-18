@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { FaStar, FaRegStar } from 'react-icons/fa';
 
 export default function Games() {
 
@@ -20,6 +21,13 @@ export default function Games() {
     // Remove the event listener when the component unmounts
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+
+
+  const rating = 4.6; // replace with your rating
+  const fullStars = Math.floor(rating);
+  const partialStar = rating % 1;
+  const emptyStars = 5 - Math.ceil(rating);
 
 
   return (
@@ -56,11 +64,34 @@ export default function Games() {
               {/* Game Cards Loop */}
               {Array.from({ length: 12 }).map((_, index) => (
                 <div key={index} className="max-w-80 lg:max-w-xl bg-white border-2 border-gray-200 rounded-lg shadow-none hover:shadow-2xl duration-75 dark:bg-gray-800 dark:border-gray-700">
+
                   <div className="p-4">
-                    <h4 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      Valheim
-                    </h4>
-                    <div className="flex justify-center my-3">
+                    <div className="text-center">
+                      <h4 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Valheim
+                      </h4>
+
+                      <div className="flex justify-center items-center mb-2">
+                        {Array.from({ length: fullStars }).map((_, i) => (
+                          <FaStar color="#ffc107" size={14} />
+                        ))}
+                        {partialStar > 0 && (
+                          <div style={{ position: 'relative', width: '14px' }}>
+                            <FaRegStar color="#e4e5e9" size={14} />
+                            <div style={{ position: 'absolute', overflow: 'hidden', width: `${14 * partialStar}px`, left: 0, top: 0 }}>
+                              <FaStar color="#ffc107" size={14} />
+                            </div>
+                          </div>
+                        )}
+                        {Array.from({ length: emptyStars }).map((_, i) => (
+                          <FaRegStar color="#e4e5e9" size={14} />
+                        ))}
+                        <span className="ml-2 text-md text-gray-600 dark:text-gray-300">{rating.toFixed(1)}</span>
+                      </div>
+
+                    </div>
+
+                    <div className="flex justify-center items-center my-3">
                       <Image
                         src="/valheim.jpg"
                         alt="Valheim"
@@ -70,6 +101,7 @@ export default function Games() {
                         objectPosition="center"
                       />
                     </div>
+
                     <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
                       {
                         // Limit the description to 100 characters on small devices
