@@ -33,11 +33,14 @@ export default function Example() {
           </div>
 
           <div className="text-center">
-            <div className=" mx-48">
-              <h1 className="w-5 text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                Connect Play Dominate
+            <div className="mx-auto inline-block text-left">
+              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                <div>Connect</div>
+                <div>Play</div>
+                <div>Dominate</div>
               </h1>
             </div>
+
 
             <p className="mt-6 text-lg leading-8 text-gray-300">
               Welcome to Gaming Community Hub – the go-to hub for gamers! Connect, play, and dominate alongside like-minded individuals.
