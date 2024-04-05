@@ -9,11 +9,24 @@ export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-
+  /**
+   * Password sterngth check
+   */
+  const [hasLowerCase, setHasLowerCase] = useState(false);
+  const [hasUpperCase, setHasUpperCase] = useState(false);
+  const [hasNumber, setHasNumber] = useState(false);
+  const [hasSpecialChar, setHasSpecialChar] = useState(false);
+  const allConditionsMet = hasLowerCase && hasUpperCase && hasNumber && hasSpecialChar && password.length >= 8;
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
+  useEffect(() => {
+    setHasLowerCase(/[a-z]/.test(password));
+    setHasUpperCase(/[A-Z]/.test(password));
+    setHasNumber(/\d/.test(password));
+    setHasSpecialChar(/[@$!%*?&]/.test(password));
+  }, [password]);
 
   return (
 
@@ -38,7 +51,7 @@ export default function LoginForm() {
         </div>
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
           <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-            Sign in to your account
+            Register your account
           </h1>
           <form className="space-y-4 md:space-y-6" action="/">
             <div>
@@ -49,7 +62,28 @@ export default function LoginForm() {
               <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
               <input type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required onChange={e => setPassword(e.target.value)} />
 
-              
+              <div className='spac text-slate-900 text-xs mt-3'>
+                <p className={hasLowerCase ? 'text-green-600' : ' text-slate-500'}>
+                  {hasLowerCase ? <FontAwesomeIcon icon={faCheck} className="mr-1" /> : <FontAwesomeIcon icon={faTimes} className="mr-1" />}
+                  Lowercase
+                </p>
+                <p className={hasUpperCase ? 'text-green-600' : 'text-slate-500'}>
+                  {hasUpperCase ? <FontAwesomeIcon icon={faCheck} className="mr-1" /> : <FontAwesomeIcon icon={faTimes} className="mr-1" />}
+                  Uppercase
+                </p>
+                <p className={hasNumber ? 'text-green-600' : 'text-slate-500'}>
+                  {hasNumber ? <FontAwesomeIcon icon={faCheck} className="mr-1" /> : <FontAwesomeIcon icon={faTimes} className="mr-1" />}
+                  Number (0-9)
+                </p>
+                <p className={hasSpecialChar ? 'text-green-600' : 'text-slate-500'}>
+                  {hasSpecialChar ? <FontAwesomeIcon icon={faCheck} className="mr-1" /> : <FontAwesomeIcon icon={faTimes} className="mr-1" />}
+                  Special Characters(!#@$%*)
+                </p>
+                <p className={password.length >= 8 ? 'text-green-600' : 'text-slate-500'}>
+                  {password.length >= 8 ? <FontAwesomeIcon icon={faCheck} className="mr-1" /> : <FontAwesomeIcon icon={faTimes} className="mr-1" />}
+                  8 Characters
+                </p>
+              </div>
 
             </div>
             <div className="flex items-center justify-between">
@@ -61,18 +95,17 @@ export default function LoginForm() {
                   <label htmlFor="remember" className=" text-xs text-gray-500 dark:text-gray-300">Remember me</label>
                 </div>
               </div>
-              <a href="#" className="text-xs font-medium text-primary-600 dark:text-primary-500 border-b-2 border-transparent hover:border-slate-200 transition-all duration-200">Forgot password?</a>
             </div>
 
             <button
               type="submit"
-              className= 'w-full text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gray-700 hover:bg-gray-600 duration-200' 
+              className={`w-full text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center ${allConditionsMet ? '  bg-gray-700 hover:bg-gray-600 duration-200' : ' text-opacity-20 bg-primary-500 cursor-not-allowed'}`}
             >
-              Sign in
+              Sign up
             </button>
 
             <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-              Don’t have an account yet? <a href="/register" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
+              Already have account? <a href="login" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Log in</a>
             </p>
           </form>
         </div>
