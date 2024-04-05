@@ -18,7 +18,7 @@ export default function About() {
         <div className="mx-auto max-w-4xl md:max-4x1 py-32 sm:py-40 lg:py-28">
           <div className="text-center">
             <div className="mx-ato">
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl decoration-1 underline underline-offset-19">
+              <h1 className="text-3xl font-bold tracking-tight text-white sm:text-5xl decoration-1 underline underline-offset-19">
                 <span style={{ whiteSpace: 'nowrap' }}>Gaming Community Hub</span>
               </h1>
             </div>

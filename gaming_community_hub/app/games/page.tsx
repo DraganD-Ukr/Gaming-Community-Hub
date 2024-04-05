@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import { FaStar, FaRegStar } from 'react-icons/fa';
+import { GameCard } from "@/components/GameCard";
 
 export default function Games() {
 
@@ -24,10 +23,6 @@ export default function Games() {
 
 
 
-  const rating = 4.6; // Rating of the game (static variable for the example)
-  const fullStars = Math.floor(rating);
-  const partialStar = rating % 1;
-  const emptyStars = 5 - Math.ceil(rating);
 
 
   return (
@@ -51,7 +46,7 @@ export default function Games() {
           <div className="text-center">
 
             <div className="mx-auto">
-              <h1 className=" text-4xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl mb-14">
+              <h1 className=" text-4xl font-bold tracking-tight text-white sm:text-4xl lg:text-4xl mb-20">
                 <span style={{ whiteSpace: 'nowrap' }}>Featured Games</span>
               </h1>
             </div>
@@ -59,65 +54,18 @@ export default function Games() {
 
 
             {/* Start of Game Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-12 gap-x-8 sm:gap-x-4 md:gap-x-4 mt-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-6 gap-x-2  mt-4">
 
               {/* Game Cards Loop */}
               {Array.from({ length: 12 }).map((_, index) => (
-                <div key={index} className="max-w-80 lg:max-w-xl bg-white border-2 border-gray-200 rounded-lg shadow-none hover:shadow-2xl duration-75 dark:bg-gray-800 dark:border-gray-700">
-
-                  <div className="p-4">
-                    <div className="text-center">
-                      <h4 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                        Valheim
-                      </h4>
-
-                      <div className="flex justify-center items-center mb-2">
-                        {Array.from({ length: fullStars }).map((_, i) => (
-                          <FaStar key={i} color="#ffc107" size={14} />
-                        ))}
-                        {partialStar > 0 && (
-                          <div style={{ position: 'relative', width: '14px' }}>
-                            <FaRegStar key="partial" color="#e4e5e9" size={14} />
-                            <div style={{ position: 'absolute', overflow: 'hidden', width: `${14 * partialStar}px`, left: 0, top: 0 }}>
-                              <FaStar key="partial-filled" color="#ffc107" size={14} />
-                            </div>
-                          </div>
-                        )}
-                        {Array.from({ length: emptyStars }).map((_, i) => (
-                          <FaRegStar key={`empty-${i}`} color="#e4e5e9" size={14} />
-                        ))}
-                        <span className="ml-2 text-md text-gray-600 dark:text-gray-300">{rating.toFixed(1)}</span>
-                      </div>
-
-                    </div>
-
-                    <div className="flex justify-center items-center my-3">
-                      <Image
-                        src="https://cdn.akamai.steamstatic.com/steam/apps/892970/capsule_616x353.jpg?t=1708348390"
-                        alt="Valheim"
-                        width={200}
-                        height={200}
-                        objectFit="cover"
-                        objectPosition="center"
-                      />
-                    </div>
-
-                    <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
-                      {
-                        // Limit the description to 100 characters on small devices
-                        windowWidth < 640
-                          ? "One of the most popular survivals of the last years. Become a viking, defeat bosses, build your houses and many more...".substring(0, 100)
-                          : "One of the most popular survivals of the last years. Become a viking, defeat bosses, build your houses and many more..."
-                      }
-                    </p>
-                    <a href="#" className="inline-flex items-center px-2 py-1 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 duration-150">
-                      View More
-                      <svg className="rtl:rotate-180 w-3 h-3 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
+                <GameCard
+                  key={index}
+                  title="Valheim"
+                  rating={4.6}
+                  imageUrl="https://cdn.akamai.steamstatic.com/steam/apps/892970/capsule_616x353.jpg?t=1708348390"
+                  description="One of the most popular survivals of the last years. Become a viking, defeat bosses, build your houses and many more in this amazing game, called Valheim."
+                  windowWidth={windowWidth}
+                /> 
               ))}
 
             </div>

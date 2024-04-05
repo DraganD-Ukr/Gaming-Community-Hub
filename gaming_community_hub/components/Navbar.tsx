@@ -38,7 +38,7 @@ export default function Navbar() {
   return (
 
     <header className="absolute inset-x-0 top-0 z-50 dark:bg-gray-900">
-      <nav className="flex items-center justify-between p-6 lg:px-8 lg:py-4" aria-label="Global">
+      <nav className="flex items-center justify-between p-3 sm:px-4 sm:py-2 md:px-6 md:py-4 lg:px-8 lg:py-5" aria-label="Global">
         {/* Logo */}
         <div className="flex lg:flex-1">
           <Link href="/">
@@ -99,7 +99,7 @@ export default function Navbar() {
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto dark:bg-slate-800 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="/" className="-m-1.5 p-1">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">Gaming Hub Community</span>
               <Image
                 className="h-12 w-auto"
                 src="/logo.png"
@@ -140,8 +140,10 @@ export default function Navbar() {
               </div>
 
               <div className="py-6">
-                <Link legacyBehavior href="#">
-                  <a className="-mx-3 block rounded-full px-4 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out">
+                <Link legacyBehavior href="/login">
+                  <a className="-mx-3 block rounded-full px-4 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 transition-colors duration-300 ease-in-out"
+                  onClick={closeMobileMenu}
+                  >
                     Log in
                   </a>
                 </Link>
