@@ -14,7 +14,7 @@ export default async function Games() {
   return (
     <div className="bg-gray-900">
       {/* Page color */}
-      
+
       <div className="relative isolate px-6 lg:px-8">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -42,10 +42,11 @@ export default async function Games() {
 
             {/* Start of Game Cards */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-6 gap-x-2  mt-4">
+              
               {/* Game Cards Loop */}
               {(games as { game_id: number, title: string; rating: number; img_link: string; description: string }[]).map((game, index) => (
                 <GameCard
-                game_id={game.game_id}
+                  game_id={game.game_id} 
                   key={index}
                   title={game.title}
                   rating={game.rating}
