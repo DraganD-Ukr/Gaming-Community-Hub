@@ -8,7 +8,7 @@ export default async function Events() {
 
   return (
     <div className="bg-gray-900 min-h-screen flex items-center justify-center"> {/* Page color */}
-      <div className="relative isolate px-6 pt-4 lg:px-8">
+      <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
           className="absolute inset-x-0 -top-130 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           aria-hidden="true"
