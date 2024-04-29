@@ -1,7 +1,5 @@
-// "use client";
 require('dotenv').config();
 
-// import { useEffect, useState } from "react";
 import { GameCard } from "@/components/GameCard";
 import { fetchGames } from "../lib/data";
 
@@ -10,19 +8,6 @@ export default async function Games() {
   // const [windowWidth, setWindowWidth] = useState(0);
   const games = await fetchGames();
 
-  // useEffect(() => {
-  //   // Update the window width when the component mounts
-  //   setWindowWidth(window.innerWidth);
-
-  //   // Create an event listener for the window resize event
-  //   const handleResize = () => setWindowWidth(window.innerWidth);
-
-  //   // Add the event listener
-  //   window.addEventListener('resize', handleResize);
-
-  //   // Remove the event listener when the component unmounts
-  //   return () => window.removeEventListener('resize', handleResize);
-  // }, []);
 
 
 

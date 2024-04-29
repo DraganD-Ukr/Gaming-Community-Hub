@@ -2,7 +2,6 @@
 // GameCard.tsx
 import Image from "next/image";
 import { FaStar, FaRegStar } from 'react-icons/fa';
-import { useRouter } from 'next/navigation';
 import Link from "next/link";
 
 interface GameCardProps {
@@ -15,7 +14,6 @@ interface GameCardProps {
 }
 
 export const GameCard: React.FC<GameCardProps> = ({ game_id, title, rating, imageUrl, description }) => {
-    const router = useRouter();
     rating = Number(rating);
     const fullStars = Math.floor(rating);
     const partialStar = rating % 1;
