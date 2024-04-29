@@ -60,7 +60,7 @@ export default async function Games() {
               {/* Game Cards Loop */}
               {(games as { game_id: number, title: string; rating: number; img_link: string; description: string }[]).map((game, index) => (
                 <GameCard
-                  id={game.game_id}
+                game_id={game.game_id}
                   key={index}
                   title={game.title}
                   rating={game.rating}

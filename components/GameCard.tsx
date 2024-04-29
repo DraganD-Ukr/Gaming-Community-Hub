@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import Link from "next/link";
 
 interface GameCardProps {
-    id: number;
+    game_id: number;
     title: string;
     rating: number;
     imageUrl: string;
@@ -14,7 +14,7 @@ interface GameCardProps {
     windowWidth: number;
 }
 
-export const GameCard: React.FC<GameCardProps> = ({ id, title, rating, imageUrl, description }) => {
+export const GameCard: React.FC<GameCardProps> = ({ game_id, title, rating, imageUrl, description }) => {
     const router = useRouter();
     rating = Number(rating);
     const fullStars = Math.floor(rating);
@@ -95,7 +95,7 @@ export const GameCard: React.FC<GameCardProps> = ({ id, title, rating, imageUrl,
                 <Link legacyBehavior href={
                     {
                         pathname: '/games/game',
-                        query: { id: id,
+                        query: { id: game_id,
                                 title: title,
                                 rating: rating,
                                 img_link: imageUrl,
