@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
-
+// Navigation links
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Games', href: '/games' },
@@ -17,7 +17,7 @@ const navigation = [
   { name: 'About', href: '/about' },
 ];
 
-const loginPath = "/login";
+
 
 
 
@@ -35,9 +35,23 @@ export default function Navbar() {
     setMobileMenuOpen(false);
   };
 
+    // Navbar opacity state
+    const [navbarOpacity, setNavbarOpacity] = useState(1);
+
+    // Adjust navbar opacity on scroll
+    useEffect(() => {
+      const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+        setNavbarOpacity(Math.max(0.6, 1 - currentScrollY / 300));
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
   return (
 
-    <header className="absolute inset-x-0 top-0 z-50 dark:bg-gray-900">
+    <header className="sticky top-0 z-50 dark:bg-gray-900"  style={{ backgroundColor: `rgba(16, 24, 39, ${navbarOpacity})`, backdropFilter: 'blur(10px)' }}>
       <nav className="flex items-center justify-between p-3 sm:px-4 sm:py-2 md:px-6 md:py-4 lg:px-8 lg:py-5" aria-label="Global">
         {/* Logo */}
         <div className="flex lg:flex-1">
@@ -83,7 +97,7 @@ export default function Navbar() {
 
         {/* Login button */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link legacyBehavior href={loginPath} >
+          <Link legacyBehavior href="/login" >
             <a className="text-sm font-semibold leading-6 text-gray-900 dark:text-white dark:hover:bg-gray-700 dark:hover:bg-opacity-30 rounded-full px-4 py-2 transition-colors duration-300 ease-in-out">
               Log in <span aria-hidden="true">&rarr;</span>
             </a>

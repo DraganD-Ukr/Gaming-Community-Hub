@@ -1,7 +1,5 @@
-// "use client";
 require('dotenv').config();
 
-// import { useEffect, useState } from "react";
 import { GameCard } from "@/components/GameCard";
 import { fetchGames } from "../lib/data";
 
@@ -10,19 +8,6 @@ export default async function Games() {
   // const [windowWidth, setWindowWidth] = useState(0);
   const games = await fetchGames();
 
-  // useEffect(() => {
-  //   // Update the window width when the component mounts
-  //   setWindowWidth(window.innerWidth);
-
-  //   // Create an event listener for the window resize event
-  //   const handleResize = () => setWindowWidth(window.innerWidth);
-
-  //   // Add the event listener
-  //   window.addEventListener('resize', handleResize);
-
-  //   // Remove the event listener when the component unmounts
-  //   return () => window.removeEventListener('resize', handleResize);
-  // }, []);
 
 
 
@@ -30,7 +15,7 @@ export default async function Games() {
     <div className="bg-gray-900">
       {/* Page color */}
       
-      <div className="relative isolate px-6 pt-6 lg:px-8">
+      <div className="relative isolate px-6 lg:px-8">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           aria-hidden="true"
