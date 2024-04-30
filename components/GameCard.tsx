@@ -5,7 +5,7 @@ import { FaStar, FaRegStar } from 'react-icons/fa';
 import Link from "next/link";
 
 interface GameCardProps {
-    game_id: number;
+    id: number;
     title: string;
     rating: number;
     imageUrl: string;
@@ -13,7 +13,7 @@ interface GameCardProps {
     windowWidth: number;
 }
 
-export const GameCard: React.FC<GameCardProps> = ({ game_id, title, rating, imageUrl, description }) => {
+export const GameCard: React.FC<GameCardProps> = ({ id, title, rating, imageUrl, description }) => {
     rating = Number(rating);
     const fullStars = Math.floor(rating);
     const partialStar = rating % 1;
@@ -93,7 +93,7 @@ export const GameCard: React.FC<GameCardProps> = ({ game_id, title, rating, imag
                 <Link legacyBehavior href={
                     {
                         pathname: '/games/game',
-                        query: { id: game_id,
+                        query: { id: id,
                                 title: title,
                                 rating: rating,
                                 img_link: imageUrl,
