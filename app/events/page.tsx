@@ -1,10 +1,10 @@
 // page.tsx
 import React from "react";
 import EventCard from '../../components/EventCard';
-import { fetchEvents } from '../lib/data';
+// import { fetchEvents } from '../lib/data';
 
 export default async function Events() {
-  const events = await fetchEvents();
+  // const events = await fetchEvents();
 
   return (
     <div className="bg-gray-900 min-h-screen flex items-center justify-center"> {/* Page color */}
@@ -28,8 +28,9 @@ export default async function Events() {
 
         {/* Start of Event Cards */}
         <div className="flex-col space-y-10 justify-center mt-4">
+
           {/* Event Cards Loop */}
-          {(events as { title: string, description: string; datetime: Date; location: string; website_link: string }[]).map((event, index) => (
+          {/* {(events as { title: string, description: string; datetime: Date; location: string; website_link: string }[]).map((event, index) => (
             <EventCard
               key={index}
               title={event.title}
@@ -38,8 +39,9 @@ export default async function Events() {
               location={event.location}
               website_link={event.website_link}
             />
-          ))}
+          ))} */}
         </div>
+
 
 <br /><br /><br />
       </div>

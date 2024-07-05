@@ -1,12 +1,12 @@
 require('dotenv').config();
 
 import { GameCard } from "@/components/GameCard";
-import { fetchGames } from "../lib/data";
+// import { fetchGames } from "../lib/data";
 
 export default async function Games() {
 
   // const [windowWidth, setWindowWidth] = useState(0);
-  const games = await fetchGames();
+  // const games = await fetchGames();
 
 
 
@@ -43,8 +43,9 @@ export default async function Games() {
             {/* Start of Game Cards */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-6 gap-x-2  mt-4">
               
+              
               {/* Game Cards Loop */}
-              {(games as { game_id: number, title: string; rating: number; img_link: string; description: string }[]).map((game, index) => (
+              {/* {(games as { game_id: number, title: string; rating: number; img_link: string; description: string }[]).map((game, index) => (
                 <GameCard
                 id={game.game_id} 
                   key={index}
@@ -54,7 +55,10 @@ export default async function Games() {
                   description={game.description}
                   windowWidth={120}
                 />
-              ))}
+              ))} */}
+
+
+
             </div>
 
 
