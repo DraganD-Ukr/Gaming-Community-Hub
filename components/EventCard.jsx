@@ -2,15 +2,9 @@
 import Link from "next/link";
 import React from "react";
 
-interface GameCardProps {
-    title: string,
-    description: string,
-    datetime: Date,
-    location: string,
-    website_link: string,
-}
 
-const EventCard: React.FC<GameCardProps> = ({ title, description, datetime, location, website_link }) => {
+
+const EventCard = ({ title, description, datetime, location, website_link }) => {
     const date = new Date(datetime);
     const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
@@ -39,3 +33,4 @@ const EventCard: React.FC<GameCardProps> = ({ title, description, datetime, loca
 };
 
 export default EventCard;
+

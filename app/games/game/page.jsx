@@ -2,15 +2,7 @@
 import React from "react";
 import GameCard from '../../../components/GameCardInfo';
 
-export default function Game({ searchParams }: {
-  searchParams: {
-    id: number;
-    title: string;
-    rating: number;
-    img_link: string;
-    description: string;
-  }
-}) {
+export default function Game({ searchParams }) {
 
   return (
     <div className="bg-gray-900 min-h-screen flex items-center justify-center"> {/* Page color */}

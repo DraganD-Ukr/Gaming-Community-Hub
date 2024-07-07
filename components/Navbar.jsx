@@ -27,11 +27,11 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Active Links
-  const isActive = (href: string) => href === currentPath;
+  const isActive = (href) => href === currentPath;
   const currentPath = usePathname();
 
   // Close mobile menu
-  const closeMobileMenu: React.MouseEventHandler<HTMLAnchorElement> = () => {
+  const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
 

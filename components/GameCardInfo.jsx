@@ -1,17 +1,9 @@
 // GameCard.tsx
 import React from "react";
 
-interface GameCardProps {
-  searchParams: {
-    id: number;
-    title: string;
-    rating: number;
-    img_link: string;
-    description: string;
-  };
-}
 
-const GameCard: React.FC<GameCardProps> = ({ searchParams }) => {
+
+const GameCard = ({ searchParams }) => {
   return (
     <div className="max-w-3xl mx-auto bg-gray-900 border-2 border-cyan-900 rounded-3xl shadow-md overflow-hidden md:max-w-3xl ">
       <div className="md:flex items-center">

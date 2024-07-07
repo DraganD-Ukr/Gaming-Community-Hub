@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "app/api/games.js", "app/api/games/route.js"  ],
+, "app/api/games.js", "app/api/games/route.js", "app/page.jsx", "app/layout.jsx", "components/EventCard.jsx", "components/Footer.jsx", "components/GameCard.jsx", "components/GameCardInfo.jsx", "components/GameCards.jsx", "components/LoginForm.jsx", "components/Navbar.jsx", "components/SignUpForm.jsx", "app/about/page.jsx", "app/events/page.jsx", "app/games/game/page.jsx", "app/games/loading.jsx", "app/lib/data.js", "app/tech-and-gear/page.jsx", "app/(auth)/register/page.jsx", "app/(auth)/login/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]
